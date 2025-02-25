@@ -86,7 +86,7 @@ function App() {
       
       <div className='ceremony-header'>
       <img src={vtcLogo} alt="VTU Logo" className="vtc-logo" /> {/* Fixed class name */}
-        <h1>Visvesvaraya Tecnological University </h1>
+        <h1>Visvesvaraya Technological University </h1>
         <h2>Center for PG Studies and Regional Office Kalaburagi - 585105</h2>
         <h3>Presents</h3>
         <img src={yuktiLogo} alt="YUKTI 2025" className="yukti-logo" />
