@@ -97,6 +97,7 @@ function App() {
         <h4>By</h4>
         <h3>Dr. S. Vidyashankar</h3>
         <p>Hon'ble Vice Chancellor</p>
+        <p>VTU Belagavi</p>
         {!launched ? (
           <div className="launch-section">
             <button 
@@ -121,7 +122,7 @@ function App() {
       </div>
       <footer className="footer">
         <p className="copyright">© 2025 YUKTI-2025. All rights reserved.</p>
-        <p>Made with ❤️ by <a href="https://yousufsky.vercel.app" target="_blank" rel="noopener noreferrer" className="highlight-name">Yousufuddin</a></p>
+        <p>Made with ❤️ by <span className="highlight-name"> Yousufuddin, Shrinivas, Danish, Narasareddy, Baswaraj</span></p>
       </footer>
     </div>
   )
