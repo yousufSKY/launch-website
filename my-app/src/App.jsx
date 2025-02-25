@@ -103,7 +103,7 @@ function App() {
               className="launch-button"
               onClick={handleLaunch}
             >
-              Launch Website
+              Launch of Website
             </button>
             <p>Please click the button to inaugurate our website</p>
           </div>
