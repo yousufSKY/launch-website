@@ -9,6 +9,7 @@ import yuktiLogo from './assets/yukti-logo.png' // Add this import
 
 function App() {
   const [launched, setLaunched] = useState(false)
+  const [documentHeight, setDocumentHeight] = useState(document.body.scrollHeight)
   const [windowDimension, setWindowDimension] = useState({
     width: window.innerWidth,
     height: window.innerHeight
@@ -19,10 +20,18 @@ function App() {
       width: window.innerWidth,
       height: window.innerHeight
     })
+    setDocumentHeight(Math.max(
+      document.body.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.clientHeight,
+      document.documentElement.scrollHeight,
+      document.documentElement.offsetHeight
+    ))
   }
 
   useEffect(() => {
     window.addEventListener('resize', detectSize)
+    detectSize() // Initial detection
     return () => {
       window.removeEventListener('resize', detectSize)
     }
@@ -56,15 +65,23 @@ function App() {
   return (
     <div className="launch-container">
       {launched && (
-        <ReactConfetti
-          width={windowDimension.width}
-          height={windowDimension.height}
-          tweenDuration={1000}
-          gravity={0.1}  // Added gravity (default is 0.1)
-          wind={0.05}    // Added slight wind
-          numberOfPieces={400} // Increased number of pieces
-          recycle={true}  // Don't recycle pieces
-        />
+        <div className="confetti-container">
+          <ReactConfetti
+            width={windowDimension.width}
+            height={documentHeight}
+            tweenDuration={1000}
+            gravity={0.2}
+            numberOfPieces={400}
+            recycle={true}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              zIndex: 1,
+              pointerEvents: 'none'
+            }}
+          />
+        </div>
       )}
       
       <div className='ceremony-header'>
@@ -104,7 +121,7 @@ function App() {
       </div>
       <footer className="footer">
         <p className="copyright">© 2025 YUKTI-2025. All rights reserved.</p>
-        <p>Designed and Developed by <a href="https://yousufsky.vercel.app" target="_blank" rel="noopener noreferrer" className="highlight-name">Yousuf</a></p>
+        <p>Made with ❤️ by <a href="https://yousufsky.vercel.app" target="_blank" rel="noopener noreferrer" className="highlight-name">Yousufuddin</a></p>
       </footer>
     </div>
   )
