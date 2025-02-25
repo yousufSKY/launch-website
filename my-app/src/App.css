@@ -1,0 +1,312 @@
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.logo-container {
+  margin: 1rem 0;  /* reduced from 2rem */
+  padding: 0.5rem; /* reduced from 1rem */
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  animation: float 3s ease-in-out infinite;
+}
+
+.vtc-logo {
+  width: 140px;    /* reduced from 150px */
+  height: 140px;   /* reduced from 150px */
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+  transition: transform 0.3s ease;
+}
+
+.vtc-logo:hover {
+  transform: scale(1.1);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.launch-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 2rem 0;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.ceremony-content {
+  width: 80%;
+  max-width: 1200px;
+  padding: 1.5rem;  /* reduced from 3rem */
+  border-radius: 20px;
+  background: rgba(44, 82, 130, 0.07);
+  backdrop-filter: blur(25px);
+  margin: 1rem;    /* reduced from 2rem */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.ceremony-content h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  background: linear-gradient(to right, #ffffff, #90cdf4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 10px rgba(144, 205, 244, 0.3);
+}
+
+.ceremony-content p {
+  font-size: 1.3rem;
+  color: #e2e8f0;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+}
+
+.ceremony-header {
+  margin: 1rem 0 2rem 0;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  width: 90%;
+  max-width: 1000px;
+}
+
+.ceremony-header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #fff, #a0aec0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 15px rgba(160, 174, 192, 0.4);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.ceremony-header h2 {
+  font-size: 1.6rem;
+  color: #cbd5e0;
+  font-weight: 500;
+  text-shadow: 0 2px 10px rgba(203, 213, 224, 0.2);
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+}
+
+.launch-button {
+  padding: 1rem 2rem;  /* reduced from 1.5rem 3rem */
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 1rem;  /* reduced from 2rem */
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(45deg, #2c5282, #1a365d);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(44, 82, 130, 0.4);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.launch-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.launch-button:active::after {
+  width: 200px;
+  height: 200px;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.launch-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  transform: skewX(-25deg);
+  transition: 0.5s;
+}
+
+.launch-button:hover::before {
+  animation: shine 1s;
+}
+
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+
+.success-message {
+  animation: fadeIn 1s ease-in, pulse 2s infinite;
+}
+
+.success-message h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #90cdf4, #4299e1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 15px rgba(66, 153, 225, 0.4);
+}
+
+.success-message p {
+  font-size: 1.4rem;
+  color: #edf2f7;
+  font-weight: 500;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  font-size: 2.5rem;  /* reduced from 3.5rem */
+  margin-bottom: 0.5rem;  /* reduced from 1rem */
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+  background: linear-gradient(to right, #fff, #808080);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: 1.2rem;  /* reduced from 2.2rem */
+  margin-bottom: 0.5rem;  /* reduced from 1rem */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+h3{
+  font-size: 1.5rem;  /* reduced from 2.2rem */
+  margin-bottom: 0.5rem;  /* reduced from 1rem */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+h4{
+  font-size: 1.5rem;  /* reduced from 2.2rem */
+  margin-bottom: 0.5rem;  /* reduced from 1rem */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+h5{
+  font-size: 1.5rem;  /* reduced from 2.2rem */
+  margin-bottom: 0.5rem;  /* reduced from 1rem */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+p {
+  font-size: 1.6rem;  /* reduced from 1.2rem */
+  margin: 0.5rem 0;  /* reduced from 1rem */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
+}
+
+@media (max-width: 768px) {
+  .ceremony-header h1 {
+    font-size: 2rem;
+  }
+  
+  .ceremony-header h2 {
+    font-size: 1.2rem;
+  }
+  
+  .ceremony-content h2 {
+    font-size: 1.8rem;
+  }
+  
+  .ceremony-content p {
+    font-size: 1.1rem;
+  }
+  
+  .launch-button {
+    font-size: 1.3rem;
+  }
+}
