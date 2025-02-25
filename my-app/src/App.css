@@ -39,6 +39,28 @@
   transform: scale(1.1);
 }
 
+.yukti-logo {
+  max-width: 600px;  /* increased from 300px */
+  width: 100%;      /* added to ensure responsive sizing */
+  height: auto;
+  margin: 25px 0;   /* increased from 20px */
+  padding: 25px;    /* increased from 20px */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  transition: all 0.3s ease;
+  animation: float-yukti 4s ease-in-out infinite;
+}
+
+.yukti-logo:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5),
+              0 0 20px rgba(255, 255, 255, 0.2);
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -52,6 +74,21 @@
   0% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0px); }
+}
+
+@keyframes float-yukti {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  }
+  50% {
+    transform: translateY(-15px) rotate(1deg);
+    box-shadow: 0 15px 40px 0 rgba(31, 38, 135, 0.5);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -289,6 +326,88 @@ body {
   background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
 }
 
+.footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer p {
+  font-size: 1rem;
+  color: #cbd5e0;
+  margin: 0;
+}
+
+.highlight-name {
+  text-decoration: none;
+  background: linear-gradient(to right, #60a5fa, #93c5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(96, 165, 250, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.highlight-name::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(to right, #60a5fa, #93c5fd);
+  transition: width 0.3s ease;
+}
+
+.highlight-name:hover::after {
+  width: 100%;
+}
+
+.section-divider {
+  width: 80%;
+  max-width: 800px;
+  display: flex;
+  align-items: center;
+  margin: 2rem auto;
+  gap: 1rem;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+}
+
+.divider-icon {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  animation: glow 2s ease-in-out infinite;
+  transform: translateY(-2px);
+}
+
+@keyframes glow {
+  0%, 100% { 
+    opacity: 0.6;
+    transform: translateY(-2px) scale(1);
+  }
+  50% { 
+    opacity: 1;
+    transform: translateY(-2px) scale(1.1);
+  }
+}
+
 @media (max-width: 768px) {
   .ceremony-header h1 {
     font-size: 2rem;
@@ -309,4 +428,15 @@ body {
   .launch-button {
     font-size: 1.3rem;
   }
+
+  .yukti-logo {
+    max-width: 320px;
+    padding: 20px;
+  }
+}
+
+.copyright {
+  font-size: 0.9rem !important;
+  color: rgba(203, 213, 224, 0.8) !important;
+  letter-spacing: 0.05em;
 }

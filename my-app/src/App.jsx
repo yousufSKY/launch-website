@@ -5,6 +5,7 @@ import { playSound } from './utils/audio'
 import popSound from './assets/sounds/pop.mp3'
 import applauseSound from './assets/sounds/applause.mp3'
 import vtcLogo from './assets/logo.png' // Add your logo file
+import yuktiLogo from './assets/yukti-logo.png' // Add this import
 
 function App() {
   const [launched, setLaunched] = useState(false)
@@ -65,15 +66,13 @@ function App() {
           recycle={true}  // Don't recycle pieces
         />
       )}
-      <div className="logo-container">
-        <img src={vtcLogo} alt="VTU Logo" className="vtc-logo" /> {/* Fixed class name */}
-      </div>
+      
       <div className='ceremony-header'>
-<h1>Visvesvaraya Tecnological University </h1>
-<h2 >Center for PG Studies and Regional Office Kalaburagi - 585105</h2>
-<h3>Presents</h3>
-<h5>YUKTI - 2025</h5>
-<h4>Reimagining Tommorrow</h4>
+      <img src={vtcLogo} alt="VTU Logo" className="vtc-logo" /> {/* Fixed class name */}
+        <h1>Visvesvaraya Tecnological University </h1>
+        <h2>Center for PG Studies and Regional Office Kalaburagi - 585105</h2>
+        <h3>Presents</h3>
+        <img src={yuktiLogo} alt="YUKTI 2025" className="yukti-logo" />
       </div>
       
       <div className="ceremony-content">
@@ -98,6 +97,15 @@ function App() {
           </div>
         )}
       </div>
+      <div className="section-divider">
+        <div className="divider-line"></div>
+        <div className="divider-icon">⚡</div>
+        <div className="divider-line"></div>
+      </div>
+      <footer className="footer">
+        <p className="copyright">© 2025 YUKTI-2025. All rights reserved.</p>
+        <p>Designed and Developed by <a href="https://yousufsky.vercel.app" target="_blank" rel="noopener noreferrer" className="highlight-name">Yousuf</a></p>
+      </footer>
     </div>
   )
 }
