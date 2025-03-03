@@ -95,9 +95,9 @@ function App() {
       <div className="ceremony-content">
         <h2>Welcome to Our Digital Inauguration</h2>
         <h4>By</h4>
-        <h3>Dr. S. Vidyashankar</h3>
-        <p>Hon'ble Vice Chancellor</p>
-        <p>VTU Belagavi</p>
+        <h3>Dr. B. Shambhu Lingappa</h3>
+        <p>Regional Director (I/c)</p>
+        <p>VTU's RO, Kalaburagi</p>
         {!launched ? (
           <div className="launch-section">
             <button 
